@@ -1,0 +1,14 @@
+body {
+    background: red;
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    margin: 50px auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
