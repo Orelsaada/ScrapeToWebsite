@@ -1,5 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as soup
+import os
 
 
 def scrape():
@@ -12,8 +13,12 @@ def scrape():
     # html parsing
     page_soup = soup(page_html, "html.parser")
 
-    filename = r"C:\Users\Orel\Desktop\ScrapingToWebsite\ReadFromCSV\BugData.csv"
-    f = open(filename, 'w')
+    # Set the location to create the csv (ReadFromCSV directory)
+    os.chdir('..\\ReadFromCSV')
+    folderpath = os.getcwd()
+    filepath = os.path.join(folderpath, 'BugData.csv')
+
+    f = open(filepath, 'w')
     f.write('Game:, Price(il-coin):\n')
 
     divs = page_soup.findAll('div', {'class': 'bordered-product product-cube-inner-1'})
@@ -31,3 +36,7 @@ def scrape():
         f.write(name + ',' + price + '\n')
     f.close()
     print("Scraped!")
+
+
+if __name__ == '__main__':
+    scrape()

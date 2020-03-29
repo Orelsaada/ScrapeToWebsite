@@ -12,10 +12,16 @@ from email.mime.text import MIMEText
 
 
 def mail():
+
+    # Set csv location
+    os.chdir('ReadFromCSV')
+    folderpath = os.getcwd()
+    filepath = os.path.join(folderpath, 'BugData.csv')
+
     # Global config
     emailfrom = "orelmishakim@gmail.com"
     emailto = "orel.amedi@gmail.com"
-    fileToSend = r"C:\Users\Orel\Desktop\ScrapingToWebsite\ReadFromCSV\BugData.csv"
+    fileToSend = filepath
     filename = 'BugData.csv'
     username = os.environ.get('MAIL_USERNAME')
     password = os.environ.get('MAIL_PASSWORD')
@@ -67,3 +73,7 @@ def mail():
     server.sendmail(emailfrom, emailto, msg.as_string())
     server.quit()
     print('Mailed!')
+
+
+if __name__ == '__main__':
+    mail()

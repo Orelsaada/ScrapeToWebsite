@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    # mainLoop()
+    mainLoop()
     # columns_titles, all_columns_list, columns_number, rows_number = readCSV()
     # return render_template("index.html", columns_titles=columns_titles,
     #                        all_columns_list=all_columns_list,

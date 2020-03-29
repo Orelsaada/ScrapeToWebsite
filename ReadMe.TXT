@@ -12,4 +12,5 @@ DID:
 4. Function to mail the CSV
 
 Remain:
-1. Make it automatically every day (scrape + mail + upload)
+1. Change all PATHS.
+2. Make it automatically every day (scrape + mail + upload)
