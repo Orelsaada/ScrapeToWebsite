@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as soup
 import os
 
 # Set the location to create the csv (ReadFromCSV directory)
-os.chdir('..')
+# os.chdir('..')
 folderpath = os.path.join(os.getcwd(), 'ReadFromCSV')
 print(folderpath)
 global filepath
