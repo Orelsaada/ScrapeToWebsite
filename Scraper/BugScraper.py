@@ -14,8 +14,9 @@ def scrape():
     page_soup = soup(page_html, "html.parser")
 
     # Set the location to create the csv (ReadFromCSV directory)
-    os.chdir('..\\ReadFromCSV')
-    folderpath = os.getcwd()
+    os.chdir('..')
+    folderpath = os.path.join(os.getcwd(), 'ReadFromCSV')
+    print(folderpath)
     filepath = os.path.join(folderpath, 'BugData.csv')
 
     f = open(filepath, 'w')
