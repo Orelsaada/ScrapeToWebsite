@@ -5,7 +5,7 @@ from mail import mail
 
 def mainLoop():
     scrape()
-    # mail()
+    mail()
     # app.run()
 
 
