@@ -2,6 +2,14 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup as soup
 import os
 
+# Set the location to create the csv (ReadFromCSV directory)
+os.chdir('..')
+folderpath = os.path.join(os.getcwd(), 'ReadFromCSV')
+print(folderpath)
+global filepath
+filepath = os.path.join(folderpath, 'BugData.csv')
+print(filepath)
+
 
 def scrape():
     # open a connection and grab the page
@@ -12,13 +20,6 @@ def scrape():
 
     # html parsing
     page_soup = soup(page_html, "html.parser")
-
-    # Set the location to create the csv (ReadFromCSV directory)
-    
-    folderpath = os.path.join(os.getcwd(), 'ReadFromCSV')
-    print(folderpath)
-    filepath = os.path.join(folderpath, 'BugData.csv')
-    print(filepath)
 
     f = open(filepath, 'w')
     f.write('Game:, Price(il-coin):\n')
