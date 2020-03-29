@@ -4,7 +4,7 @@ from mail import mail
 
 def mainLoop():
     scrape()
-    mail()
+    # mail()
 
 
 if __name__ == '__main__':
