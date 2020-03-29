@@ -10,13 +10,13 @@ from email.mime.base import MIMEBase
 from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 
+# Set csv location
+os.chdir('ReadFromCSV')
+folderpath = os.getcwd()
+filepath = os.path.join(folderpath, 'BugData.csv')
+
 
 def mail():
-
-    # Set csv location
-    os.chdir('ReadFromCSV')
-    folderpath = os.getcwd()
-    filepath = os.path.join(folderpath, 'BugData.csv')
 
     # Global config
     emailfrom = "orelmishakim@gmail.com"
