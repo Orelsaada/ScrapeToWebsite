@@ -1,18 +1,23 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 
-sched = BlockingScheduler()
+sched = BlockingScheduler(timezone='Asia/Jerusalem')
 
 
-# @sched.scheduled_job('interval', seconds=30)
+# @sched.scheduled_job('interval', seconds=10)
 # def timed_job():
 #     from main import mainLoop
-#     mainLoop()
+#     print('test')
+    # mainLoop()
 
 
-@sched.scheduled_job('cron', day_of_week='mon', hour=10)
+@sched.scheduled_job('cron', day_of_week='mon', hour=21, minute=0)
 def schedueld_job():
     from main import mainLoop
     mainLoop()
 
 
 sched.start()
+
+"""
+Time on Heroku servers is 3 hours earlier than local (20:00 local => 17:00 heroku).
+"""

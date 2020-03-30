@@ -5,10 +5,8 @@ import os
 # Set the location to create the csv (ReadFromCSV directory)
 # os.chdir('..')
 folderpath = os.path.join(os.getcwd(), 'ReadFromCSV')
-print(folderpath)
 global filepath
 filepath = os.path.join(folderpath, 'BugData.csv')
-print(filepath)
 
 
 def scrape():
