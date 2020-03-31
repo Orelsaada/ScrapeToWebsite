@@ -1,8 +1,8 @@
 import csv
 
 
-def readCSV():
-    with open("BugData.csv", 'r') as csv_file:
+def readCSV(path):
+    with open(path, 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
 
         for line in csv_reader:
