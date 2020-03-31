@@ -10,7 +10,7 @@ sched = BlockingScheduler(timezone='Asia/Jerusalem')
     # mainLoop()
 
 
-@sched.scheduled_job('cron', day_of_week='tue', hour=10, minute=7)
+@sched.scheduled_job('cron', day_of_week='tue', hour=21, minute=0)
 def schedueld_job():
     from main import mainLoop
     mainLoop()
