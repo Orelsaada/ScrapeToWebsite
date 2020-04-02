@@ -20,7 +20,7 @@ def scrape():
     page_soup = soup(page_html, "html.parser")
 
     f = open(filepath, 'w')
-    f.write('Game:, Price(il-coin):\n')
+    f.write('Game, Price\n')
 
     divs = page_soup.findAll('div', {'class': 'bordered-product product-cube-inner-1'})
     number = 0

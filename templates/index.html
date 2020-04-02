@@ -9,24 +9,31 @@
     <title>Scrape to Website</title>
 </head>
 <body>
-    <table>
-        <!-- Columns Titles -->
-        <tr>
-            {% for title in columns_titles %}
-                <th> {{ title }} </th>
-            {% endfor %}
-        </tr>
-
-        <!-- 2d lists create rows and columns -->
+    <div class="table-container">
+        <table>
+            <!-- Columns Titles -->
+            <tr>
+                {% for title in columns_titles %}
+                    <th> {{ title }} </th>
+                {% endfor %}
+            </tr>
+    
+            <!-- 2d lists create rows and columns -->
             {% for row in range(rows_number) %}
             <tr>
                 {% for col in range(columns_number) %}
-                <td>{{ all_columns_list[row][col] }}</td>
+                    {% if row % 2 != 0 %}
+                        <td class="grayed">{{ all_columns_list[row][col] }}</td>
+                    {% else %}
+                        <td>{{ all_columns_list[row][col] }}</td>
+                    {% endif %}
                 {% endfor %}
             </tr>
             {% endfor %}
+    
+        </table>
+    </div>
 
-    </table>
 
 
 </body>
