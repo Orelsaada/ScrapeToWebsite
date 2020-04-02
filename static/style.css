@@ -1,9 +1,10 @@
 html {
     height: 100%;
+    background: linear-gradient(45deg, #4860FF,#57F4FF) fixed;
+    background-repeat: no-repeat;
 }
 
 body {
-    background-image: linear-gradient(45deg, #4860FF,#57F4FF);
     margin: 0;
     padding: 0;
     width: 100%;
