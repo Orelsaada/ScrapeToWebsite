@@ -3,7 +3,8 @@ from bs4 import BeautifulSoup as soup
 import os
 
 # Set the location to create the csv (ReadFromCSV directory)
-# os.chdir('..')
+if __name__ == '__main__':
+    os.chdir('..')
 folderpath = os.path.join(os.getcwd(), 'ReadFromCSV')
 global filepath
 filepath = os.path.join(folderpath, 'BugData.csv')
