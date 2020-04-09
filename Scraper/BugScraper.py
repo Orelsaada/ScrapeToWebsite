@@ -1,6 +1,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as soup
 import os
+import datetime
 
 # Set the location to create the csv (ReadFromCSV directory)
 if __name__ == '__main__':
@@ -38,7 +39,9 @@ def scrape():
         f.write(name + ',' + price + '\n')
     f.close()
     print("Scraped!")
-
+    timestamp = os.path.getctime(filepath)
+    creation_time = datetime.datetime.fromtimestamp(timestamp).strftime("%d/%m/%Y \n%H:%M")
+    return creation_time
 
 if __name__ == '__main__':
     scrape()
