@@ -40,11 +40,6 @@ def scrape():
     f.close()
     print("Scraped!")
 
-    # CSV creation time (Adding 3 hours because of heroku timezone)
-    timestamp = os.path.getctime(filepath)
-    creation_time = datetime.datetime.fromtimestamp(timestamp) + datetime.timedelta(hours=3)
-    creation_time = creation_time.strftime("%d/%m/%Y \n%H:%M") 
-    return creation_time
 
 if __name__ == '__main__':
     scrape()
