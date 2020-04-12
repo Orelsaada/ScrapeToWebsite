@@ -70,10 +70,24 @@ table, td, th {
 }
 
 /* Media Queries */
+/* Portrait phones */
 @media only screen and (max-width: 570px) {
     body, th, td {
         font-size: 15px;
         padding: 0;
+    }
+    table {
+        margin: 0;
+    }
+    th {
+        padding: 5px;
+    }
+}
+/* Landscape phones */
+@media (max-height: 400px) {
+    body, th, td {
+        font-size: 15px;
+        padding: 1px;
     }
     table {
         margin: 0;
